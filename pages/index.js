@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Hero from '@/components/Hero'
 import { useRef } from "react";
-import Navbar from '@/components/Navbar'
 import Main from '@/components/Main'
 
 export default function Home() {

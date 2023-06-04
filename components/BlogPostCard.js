@@ -11,10 +11,10 @@ const BlogPostCard = ({ blogPost }) => {
 
   // Navigate to Blog Detail Page
   const handleClick = () => {
-    const urlRegex = /\s/g;
-    const url_title = blogPost.title.toLowerCase().replace(urlRegex, "-");
-
-    router.push(`/posts/${blogPost._id}`);
+    router.push({
+      pathname: `/posts/${blogPost.slug}`,
+      query: { postid: blogPost._id}
+    }, `/posts/${blogPost.slug}`)
   };
 
   return (

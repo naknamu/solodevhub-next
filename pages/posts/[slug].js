@@ -4,11 +4,11 @@ import BlogPost from "@/components/BlogPost";
 
 const BlogPostDetail = () => {
   const router = useRouter();
-  const { postid } = router.query;
+  const { postid, slug } = router.query;
 
   return (
     <div className="blogPostDetail">
-      <BlogPost postid={postid} />
+      <BlogPost postid={postid} slug={slug} />
       {/* <Comment postid={postid} /> */}
     </div>
   );
