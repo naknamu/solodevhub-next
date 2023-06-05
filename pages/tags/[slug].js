@@ -1,21 +1,21 @@
-import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import Topic from "@/components/Topic";
 import config from "@/config/config";
 
-const CategoryDetail = () => {
+const TagDetail = () => {
   const router = useRouter();
   const { topicID } = router.query;
-  const [category, setCategory] = useState([]);
+  const [tag, setTag] = useState([]);
   const [blogPosts, setBlogPosts] = useState([]);
 
   useEffect(() => {
-    const fetchCategoryDetails = async () => {
+    const fetchTagDetails = async () => {
       const apiUrl = config.apiUrl;
-      const response = await fetch(`${apiUrl}/categories/${topicID}`);
+      const response = await fetch(`${apiUrl}/tags/${topicID}`);
       const data = await response.json();
 
-      setCategory(data.category);
+      setTag(data.tag);
 
       // Filter only published posts
       const published_blogPost = data.blogPosts.filter(
@@ -23,14 +23,14 @@ const CategoryDetail = () => {
       );
       setBlogPosts(published_blogPost);
     };
-    fetchCategoryDetails();
+    fetchTagDetails();
   }, [topicID]);
 
   return (
-    <div className="categoryDetail">
-      <Topic topic={category} blogPosts={blogPosts} topicName={"category"} />
+    <div className="tagDetail">
+      <Topic topic={tag} blogPosts={blogPosts} topicName={"tag"} />
     </div>
   );
 };
 
-export default CategoryDetail;
+export default TagDetail;

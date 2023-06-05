@@ -23,12 +23,10 @@ const TopicList = ({ topic, topicLists }) => {
     const urlRegex = /\s/g;
     const url_title = topic.name.toLowerCase().replace(urlRegex, "-");
 
-    // router.push(`/${topicLists}/${topic._id}/what-is-${url_title}`);
-
     router.push({
-        pathname: `/categories/${url_title}`,
-        query: { categoryid: topic._id}
-    }, `/categories/${url_title}`)
+        pathname: `/${topicLists}/${url_title}`,
+        query: { topicID: topic._id}
+    }, `/${topicLists}/${url_title}`)
   };
 
   return <TopicListCard onClick={handleClick}>{topic.name}</TopicListCard>;

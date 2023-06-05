@@ -37,11 +37,6 @@ const BlogListCard = ({ blogPost }) => {
   const router = useRouter();
 
   const handleClick = () => {
-    // const urlRegex = /\s/g;
-    // const url_title = blogPost.title.toLowerCase().replace(urlRegex, "-");
-
-    // navigate(`/posts/${blogPost._id}/${url_title}`);
-
     router.push({
         pathname: `/posts/${blogPost.slug}`,
         query: { postid: blogPost._id}
