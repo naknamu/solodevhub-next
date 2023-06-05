@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import Logo from "./Logo";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { AiOutlineClose } from "react-icons/ai";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
@@ -19,13 +21,14 @@ const Navbar = () => {
         <nav className="navbar">
           <Logo />
 
-          <div className="nav-btn">
-            <span
+          <div className="nav-btn" onClick={() => handleMenuClick()}>
+            {/* <span
               className="material-symbols-outlined"
               onClick={() => handleMenuClick()}
             >
               menu
-            </span>
+            </span> */}
+            <RxHamburgerMenu />
           </div>
 
           <div className="flex-wrapper">
@@ -56,7 +59,8 @@ const Navbar = () => {
                 className="nav-btn closeBtn"
                 onClick={() => handleCloseClick()}
               >
-                <span className="material-symbols-outlined">close</span>
+                {/* <span className="material-symbols-outlined">close</span> */}
+                <AiOutlineClose />
               </div>
 
               <div className="nav-links">

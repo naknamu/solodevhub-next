@@ -1,9 +1,10 @@
 import Layout from '@/components/Layout'
 import '@/styles/globals.css'
 import { useRouter } from "next/router";
-import { Montserrat } from 'next/font/google';
+import { Montserrat, Inter } from 'next/font/google';
  
 const mont = Montserrat({ subsets: ['latin'] });
+
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();

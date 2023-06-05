@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useRouter } from "next/router";
 
 const Logo = () => {
@@ -9,8 +10,9 @@ const Logo = () => {
 
   return (
     <div onClick={handleClick} className="logo-wrapper">
-      <img
+      <Image
         width={150}
+        height={40}
         src="/logo-no-background.png"
         alt="solodevhub logo"
       />
