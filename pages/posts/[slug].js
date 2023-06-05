@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import BlogPost from "@/components/BlogPost";
-// import Comment from "../components/Comment";
+import Comment from "@/components/Comment";
 
 const BlogPostDetail = () => {
   const router = useRouter();
@@ -9,7 +9,7 @@ const BlogPostDetail = () => {
   return (
     <div className="blogPostDetail">
       <BlogPost postid={postid} slug={slug} />
-      {/* <Comment postid={postid} /> */}
+      <Comment postid={postid} />
     </div>
   );
 };
