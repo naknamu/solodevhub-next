@@ -13,7 +13,6 @@ const Logo = () => {
         width={150}
         src="/logo-no-background.png"
         alt="solodevhub logo"
-        loading="lazy"
       />
     </div>
   );

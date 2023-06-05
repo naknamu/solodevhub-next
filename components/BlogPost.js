@@ -4,6 +4,7 @@ import config from "../config/config";
 import MarkdownPreview from "./MdPreview";
 import styled from "styled-components";
 import useSWR from "swr";
+import Image from "next/image";
 
 const { DateTime } = require("luxon");
 
@@ -106,7 +107,7 @@ const BlogPost = ({ postid }) => {
     const urlRegex = /\s/g;
     const url_title = tag.name.toLowerCase().replace(urlRegex, "-");
 
-    router(`/tags/${tag._id}/what-is-${url_title}`);
+    router(`/tags/${tag._id}/${url_title}`);
   };
 
   return (
@@ -114,7 +115,7 @@ const BlogPost = ({ postid }) => {
       <div className="container">
         <BlogWrapper>
           <BannerWrapper>
-            <img src={data.image_url} alt={`${data.title} banner`} />
+            <Image src={data.image_url} alt={`${data.title} banner`} width={400} height={400} priority />
           </BannerWrapper>
 
           <CategoryButton category={data.category} />

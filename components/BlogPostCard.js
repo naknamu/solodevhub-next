@@ -1,6 +1,7 @@
 import CategoryButton from "./CategoryButton";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 const BlogPostCard = ({ blogPost }) => {
   const MAX_PREVIEW_LENGTH = 200; // maximum length of the preview content
@@ -11,23 +12,27 @@ const BlogPostCard = ({ blogPost }) => {
 
   // Navigate to Blog Detail Page
   const handleClick = () => {
+    // convert title to slug, remove question mark and convert space to dash '-'
+    const url_title = blogPost.title.toLowerCase().replace(/\?/g, '').replace(/\s+/g, '-');
+
     router.push({
-      pathname: `/posts/${blogPost.slug}`,
+      pathname: `/posts/${url_title}`,
       query: { postid: blogPost._id}
-    }, `/posts/${blogPost.slug}`)
+    }, `/posts/${url_title}`)
   };
 
   return (
     <div className="blogPost-card">
       <div className="blog-card-banner">
-        <img
+        <Image
           src={blogPost.image_url === undefined ? "#" : blogPost.image_url}
           alt="Blog Post Banner"
           className="blog-banner-img"
-          loading="lazy"
           onClick={() => handleClick()}
           width={400}
           height={400}
+          responsive='true'
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>
 
