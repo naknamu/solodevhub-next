@@ -7,7 +7,7 @@ const CategoryButton = ({ category }) => {
     const urlRegex = /\s/g;
     const url_title = category.name.toLowerCase().replace(urlRegex, "-");
 
-    router.push(`/categories/${category._id}/what-is-${url_title}`);
+    router.push(`/categories/${category._id}/${url_title}`);
   };
 
   return (

@@ -73,19 +73,8 @@ const BlogContent = styled.div`
   margin-top: var(--pad-1);
 `;
 
-const BlogPost = ({ postid }) => {
+const BlogPost = ({ data }) => {
   const router = useRouter();
-
-  const fetchPosts = async () => {
-    const response = await fetch(`${config.apiUrl}/posts/${postid}`);
-
-    if (!response.ok) {
-      throw new Error("Failed to fetch blog posts");
-    }
-    return response.json();
-  };
-
-  const { data, error } = useSWR(`${postid}`, fetchPosts);
 
   // Render when data is not null
   if (!data) {
@@ -98,16 +87,12 @@ const BlogPost = ({ postid }) => {
     );
   }
 
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
-
   // Handle tag click
   const handleClick = (tag) => {
     const urlRegex = /\s/g;
     const url_title = tag.name.toLowerCase().replace(urlRegex, "-");
 
-    router(`/tags/${tag._id}/${url_title}`);
+    router.push(`/tags/${tag._id}/${url_title}`);
   };
 
   return (
@@ -115,7 +100,7 @@ const BlogPost = ({ postid }) => {
       <div className="container">
         <BlogWrapper>
           <BannerWrapper>
-            <Image src={data.image_url} alt={`${data.title} banner`} width={400} height={400} priority />
+            <Image src={data.image_url} alt={`${data.title} banner`} width={600} height={600} priority />
           </BannerWrapper>
 
           <CategoryButton category={data.category} />

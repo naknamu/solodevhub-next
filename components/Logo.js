@@ -1,6 +1,10 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 
+const imageStyle = {
+  width: 'auto'
+};
+
 const Logo = () => {
   const router = useRouter();
 
@@ -15,6 +19,8 @@ const Logo = () => {
         height={40}
         src="/logo-no-background.png"
         alt="solodevhub logo"
+        style={imageStyle} 
+        priority
       />
     </div>
   );

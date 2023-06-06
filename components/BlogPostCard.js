@@ -18,7 +18,7 @@ const BlogPostCard = ({ blogPost }) => {
     router.push({
       pathname: `/posts/${url_title}`,
       query: { postid: blogPost._id}
-    }, `/posts/${url_title}`)
+    }, `/posts/${url_title}`, { shallow: true })
   };
 
   return (
@@ -32,7 +32,6 @@ const BlogPostCard = ({ blogPost }) => {
           width={400}
           height={400}
           responsive='true'
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>
 

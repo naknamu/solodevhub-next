@@ -22,17 +22,11 @@ const Navbar = () => {
           <Logo />
 
           <div className="nav-btn" onClick={() => handleMenuClick()}>
-            {/* <span
-              className="material-symbols-outlined"
-              onClick={() => handleMenuClick()}
-            >
-              menu
-            </span> */}
             <RxHamburgerMenu />
           </div>
 
           <div className="flex-wrapper">
-            <ul className="deskhrefp-nav">
+            <ul className="desktop-nav">
               <li>
                 <Link href="/" className="nav-link">
                   Home
@@ -57,9 +51,7 @@ const Navbar = () => {
             <div className="mobile-nav-wrapper">
               <div
                 className="nav-btn closeBtn"
-                onClick={() => handleCloseClick()}
-              >
-                {/* <span className="material-symbols-outlined">close</span> */}
+                onClick={() => handleCloseClick()}>
                 <AiOutlineClose />
               </div>
 
