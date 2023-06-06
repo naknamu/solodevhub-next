@@ -3,16 +3,27 @@ import { useRouter } from "next/router";
 import Topic from "@/components/Topic";
 import config from "@/config/config";
 
+export const getServerSideProps = async (context) => {
+
+  const { slug } = context.query;
+
+  return {
+    props: {
+      slug
+    }
+  }
+}
+
 const CategoryDetail = () => {
   const router = useRouter();
-  const { topicID } = router.query;
+  const { slug } = router.query;
   const [category, setCategory] = useState([]);
   const [blogPosts, setBlogPosts] = useState([]);
 
   useEffect(() => {
     const fetchCategoryDetails = async () => {
       const apiUrl = config.apiUrl;
-      const response = await fetch(`${apiUrl}/categories/${topicID}`);
+      const response = await fetch(`${apiUrl}/categories/${slug}`);
       const data = await response.json();
 
       setCategory(data.category);
@@ -24,7 +35,7 @@ const CategoryDetail = () => {
       setBlogPosts(published_blogPost);
     };
     fetchCategoryDetails();
-  }, [topicID]);
+  }, [slug]);
 
   return (
     <div className="categoryDetail">

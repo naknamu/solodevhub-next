@@ -20,13 +20,8 @@ const TopicList = ({ topic, topicLists }) => {
   const router = useRouter();
 
   const handleClick = () => {
-    const urlRegex = /\s/g;
-    const url_title = topic.name.toLowerCase().replace(urlRegex, "-");
 
-    router.push({
-        pathname: `/${topicLists}/${url_title}`,
-        query: { topicID: topic._id}
-    }, `/${topicLists}/${url_title}`)
+    router.push(`/${topicLists}/${topic.slug}`);
   };
 
   return <TopicListCard onClick={handleClick}>{topic.name}</TopicListCard>;

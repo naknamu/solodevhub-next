@@ -3,16 +3,27 @@ import { useEffect, useState } from "react";
 import Topic from "@/components/Topic";
 import config from "@/config/config";
 
+export const getServerSideProps = async (context) => {
+
+  const { slug } = context.query;
+
+  return {
+    props: {
+      slug
+    }
+  }
+}
+
 const TagDetail = () => {
   const router = useRouter();
-  const { topicID } = router.query;
+  const { slug } = router.query;
   const [tag, setTag] = useState([]);
   const [blogPosts, setBlogPosts] = useState([]);
 
   useEffect(() => {
     const fetchTagDetails = async () => {
       const apiUrl = config.apiUrl;
-      const response = await fetch(`${apiUrl}/tags/${topicID}`);
+      const response = await fetch(`${apiUrl}/tags/${slug}`);
       const data = await response.json();
 
       setTag(data.tag);
@@ -24,7 +35,7 @@ const TagDetail = () => {
       setBlogPosts(published_blogPost);
     };
     fetchTagDetails();
-  }, [topicID]);
+  }, [slug]);
 
   return (
     <div className="tagDetail">

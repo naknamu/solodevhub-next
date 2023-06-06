@@ -20,13 +20,10 @@ export const getServerSideProps = async (context) => {
 
 const BlogPostDetail = ({ post }) => {
 
-  // Destructured array to return JSON data
-  const [ postDetail ] = post;
-
   return (
     <div className="blogPostDetail">
-      <BlogPost data={postDetail} />
-      <Comment postid={postDetail._id} />
+      <BlogPost data={post} />
+      <Comment postid={post._id} />
     </div>
   );
 };
