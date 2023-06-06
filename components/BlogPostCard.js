@@ -32,6 +32,7 @@ const BlogPostCard = ({ blogPost }) => {
           width={400}
           height={400}
           responsive='true'
+          priority
         />
       </div>
 

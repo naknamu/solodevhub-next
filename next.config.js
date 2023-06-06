@@ -1,9 +1,4 @@
 /** @type {import('next').NextConfig} */
-// const nextConfig = {
-//   reactStrictMode: true
-// }
-
-// module.exports = nextConfig
 
 const removeImports = require('next-remove-imports')();
 
@@ -13,9 +8,3 @@ module.exports = removeImports({
     domains: ['pub-9c57eec207bf46e8acf2f916d8ea29e7.r2.dev'],
   },
 });
-
-// module.exports = {
-//   images: {
-//     domains: ['pub-9c57eec207bf46e8acf2f916d8ea29e7.r2.dev'],
-//   },
-// };
