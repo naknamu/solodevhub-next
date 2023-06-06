@@ -5,9 +5,9 @@ import config from "@/config/config";
 
 
 export const getServerSideProps = async (context) => {
-  const { postid } = context.query;
+  const { slug } = context.query;
 
-  const response = await fetch(`${config.apiUrl}/posts/${postid}`);
+  const response = await fetch(`${config.apiUrl}/posts/${slug}`);
   const data = await response.json();
 
   return {
@@ -19,13 +19,14 @@ export const getServerSideProps = async (context) => {
 
 
 const BlogPostDetail = ({ post }) => {
-  const router = useRouter();
-  const { postid } = router.query;
+
+  // Destructured array to return JSON data
+  const [ postDetail ] = post;
 
   return (
     <div className="blogPostDetail">
-      <BlogPost data={post} />
-      <Comment postid={postid} />
+      <BlogPost data={postDetail} />
+      <Comment postid={postDetail._id} />
     </div>
   );
 };

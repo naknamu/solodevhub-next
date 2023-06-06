@@ -13,12 +13,14 @@ const BlogPostCard = ({ blogPost }) => {
   // Navigate to Blog Detail Page
   const handleClick = () => {
     // convert title to slug, remove question mark and convert space to dash '-'
-    const url_title = blogPost.title.toLowerCase().replace(/\?/g, '').replace(/\s+/g, '-');
+    // const url_title = blogPost.title.toLowerCase().replace(/\?/g, '').replace(/\s+/g, '-');
 
-    router.push({
-      pathname: `/posts/${url_title}`,
-      query: { postid: blogPost._id}
-    }, `/posts/${url_title}`, { shallow: true })
+    // router.push({
+    //   pathname: `/posts/${blogPost.slug}`,
+    //   query: { postid: blogPost._id}
+    // }, `/posts/${blogPost.slug}`)
+
+    router.push(`/posts/${blogPost.slug}`);
   };
 
   return (
