@@ -25,7 +25,7 @@ const BlogPostCard = ({ blogPost }) => {
           onClick={() => handleClick()}
           width={400}
           height={400}
-          responsive='true'
+          responsive="true"
           priority
         />
       </div>

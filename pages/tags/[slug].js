@@ -4,15 +4,14 @@ import Topic from "@/components/Topic";
 import config from "@/config/config";
 
 export const getServerSideProps = async (context) => {
-
   const { slug } = context.query;
 
   return {
     props: {
-      slug
-    }
-  }
-}
+      slug,
+    },
+  };
+};
 
 const TagDetail = () => {
   const router = useRouter();

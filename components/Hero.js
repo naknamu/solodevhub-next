@@ -19,7 +19,9 @@ const Hero = forwardRef(({ scrollToChild }, ref) => {
         </h1>
         <div className="details">
           <p className="h3">
-            Discover the world of solo software development with insights, tutorials, and career advice exclusively for aspiring solo developers.
+            Discover the world of solo software development with insights,
+            tutorials, and career advice exclusively for aspiring solo
+            developers.
           </p>
         </div>
 

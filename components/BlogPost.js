@@ -100,7 +100,13 @@ const BlogPost = ({ data }) => {
       <div className="container">
         <BlogWrapper>
           <BannerWrapper>
-            <Image src={data.image_url} alt={`${data.title} banner`} width={600} height={600} priority />
+            <Image
+              src={data.image_url}
+              alt={`${data.title} banner`}
+              width={600}
+              height={600}
+              priority
+            />
           </BannerWrapper>
 
           <CategoryButton category={data.category} />
@@ -135,7 +141,6 @@ const BlogPost = ({ data }) => {
             <MarkdownPreview markdown={data.content} />
           </BlogContent>
         </BlogWrapper>
-        
       </div>
     </BlogPostStyled>
   );

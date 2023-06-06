@@ -37,14 +37,19 @@ const BlogListCard = ({ blogPost }) => {
   const router = useRouter();
 
   const handleClick = () => {
-
     // convert title to slug, remove question mark and convert space to dash '-'
-    const url_title = blogPost.title.toLowerCase().replace(/\?/g, '').replace(/\s+/g, '-');
+    const url_title = blogPost.title
+      .toLowerCase()
+      .replace(/\?/g, "")
+      .replace(/\s+/g, "-");
 
-    router.push({
+    router.push(
+      {
         pathname: `/posts/${url_title}`,
-        query: { postid: blogPost._id}
-    }, `/posts/${url_title}`)
+        query: { postid: blogPost._id },
+      },
+      `/posts/${url_title}`
+    );
   };
 
   return (

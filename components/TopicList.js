@@ -20,7 +20,6 @@ const TopicList = ({ topic, topicLists }) => {
   const router = useRouter();
 
   const handleClick = () => {
-
     router.push(`/${topicLists}/${topic.slug}`);
   };
 

@@ -3,7 +3,6 @@ import BlogPost from "@/components/BlogPost";
 import Comment from "@/components/Comment";
 import config from "@/config/config";
 
-
 export const getServerSideProps = async (context) => {
   const { slug } = context.query;
 
@@ -12,14 +11,12 @@ export const getServerSideProps = async (context) => {
 
   return {
     props: {
-      post: data
-    }
-  }
-}
-
+      post: data,
+    },
+  };
+};
 
 const BlogPostDetail = ({ post }) => {
-
   return (
     <div className="blogPostDetail">
       <BlogPost data={post} />

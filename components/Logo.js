@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 
 const imageStyle = {
-  width: 'auto'
+  width: "auto",
 };
 
 const Logo = () => {
@@ -19,7 +19,7 @@ const Logo = () => {
         height={40}
         src="/logo-no-background.png"
         alt="solodevhub logo"
-        style={imageStyle} 
+        style={imageStyle}
         priority
       />
     </div>

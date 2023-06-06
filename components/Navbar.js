@@ -51,7 +51,8 @@ const Navbar = () => {
             <div className="mobile-nav-wrapper">
               <div
                 className="nav-btn closeBtn"
-                onClick={() => handleCloseClick()}>
+                onClick={() => handleCloseClick()}
+              >
                 <AiOutlineClose />
               </div>
 
