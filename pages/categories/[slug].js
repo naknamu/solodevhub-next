@@ -4,21 +4,20 @@ import { getCategoryBySlug } from "../api/category";
 export const getStaticPaths = async () => {
   return {
     paths: [],
-    fallback: 'blocking'
-  }
-}
+    fallback: "blocking",
+  };
+};
 
 export const getStaticProps = async (context) => {
-  const data = await getCategoryBySlug(context.params.slug)
-  if(!data) return { redirect: '/categories', permanent: false }
+  const data = await getCategoryBySlug(context.params.slug);
+  if (!data) return { redirect: "/categories", permanent: false };
 
   return {
-    props: { data }
-  }
-}
+    props: { data },
+  };
+};
 
 const CategoryDetail = ({ data }) => {
-
   const { category, blogPosts } = data;
 
   // Filter only published posts
@@ -28,7 +27,11 @@ const CategoryDetail = ({ data }) => {
 
   return (
     <div className="categoryDetail">
-      <Topic topic={category} blogPosts={published_blogPost} topicName={"category"} />
+      <Topic
+        topic={category}
+        blogPosts={published_blogPost}
+        topicName={"category"}
+      />
     </div>
   );
 };

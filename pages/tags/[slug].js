@@ -4,21 +4,20 @@ import { getTagBySlug } from "../api/tag";
 export const getStaticPaths = async () => {
   return {
     paths: [],
-    fallback: 'blocking'
-  }
-}
+    fallback: "blocking",
+  };
+};
 
 export const getStaticProps = async (context) => {
-  const data = await getTagBySlug(context.params.slug)
-  if(!data) return { redirect: '/tags', permanent: false }
+  const data = await getTagBySlug(context.params.slug);
+  if (!data) return { redirect: "/tags", permanent: false };
 
   return {
-    props: { data }
-  }
-}
+    props: { data },
+  };
+};
 
 const TagDetail = ({ data }) => {
-
   const { tag, blogPosts } = data;
 
   // Filter only published posts

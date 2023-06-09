@@ -5,18 +5,18 @@ import { getPostBySlug } from "../api/post";
 export const getStaticPaths = async () => {
   return {
     paths: [],
-    fallback: 'blocking'
-  }
-}
+    fallback: "blocking",
+  };
+};
 
 export const getStaticProps = async (context) => {
-  const post = await getPostBySlug(context.params.slug)
-  if(!post) return { redirect: '/', permanent: false } // redirect to main blog posts page if post doesn't exist, or any other page you want
+  const post = await getPostBySlug(context.params.slug);
+  if (!post) return { redirect: "/", permanent: false }; // redirect to main blog posts page if post doesn't exist, or any other page you want
 
   return {
-    props: { post }
-  }
-}
+    props: { post },
+  };
+};
 
 const BlogPostDetail = ({ post }) => {
   return (
