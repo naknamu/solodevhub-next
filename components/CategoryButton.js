@@ -4,10 +4,7 @@ const CategoryButton = ({ category }) => {
   const router = useRouter();
 
   const handleClick = () => {
-    const urlRegex = /\s/g;
-    const url_title = category.name.toLowerCase().replace(urlRegex, "-");
-
-    router.push(`/categories/${category._id}/${url_title}`);
+    router.push(`/categories/${category.slug}/`);
   };
 
   return (

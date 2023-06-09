@@ -1,44 +1,34 @@
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 import Topic from "@/components/Topic";
-import config from "@/config/config";
+import { getTagBySlug } from "../api/tag";
 
-export const getServerSideProps = async (context) => {
-  const { slug } = context.query;
+export const getStaticPaths = async () => {
+  return {
+    paths: [],
+    fallback: 'blocking'
+  }
+}
+
+export const getStaticProps = async (context) => {
+  const data = await getTagBySlug(context.params.slug)
+  if(!data) return { redirect: '/tags', permanent: false }
 
   return {
-    props: {
-      slug,
-    },
-  };
-};
+    props: { data }
+  }
+}
 
-const TagDetail = () => {
-  const router = useRouter();
-  const { slug } = router.query;
-  const [tag, setTag] = useState([]);
-  const [blogPosts, setBlogPosts] = useState([]);
+const TagDetail = ({ data }) => {
 
-  useEffect(() => {
-    const fetchTagDetails = async () => {
-      const apiUrl = config.apiUrl;
-      const response = await fetch(`${apiUrl}/tags/${slug}`);
-      const data = await response.json();
+  const { tag, blogPosts } = data;
 
-      setTag(data.tag);
-
-      // Filter only published posts
-      const published_blogPost = data.blogPosts.filter(
-        (blogPost) => blogPost.published === true
-      );
-      setBlogPosts(published_blogPost);
-    };
-    fetchTagDetails();
-  }, [slug]);
+  // Filter only published posts
+  const published_blogPost = blogPosts.filter(
+    (blogPost) => blogPost.published === true
+  );
 
   return (
     <div className="tagDetail">
-      <Topic topic={tag} blogPosts={blogPosts} topicName={"tag"} />
+      <Topic topic={tag} blogPosts={published_blogPost} topicName={"tag"} />
     </div>
   );
 };

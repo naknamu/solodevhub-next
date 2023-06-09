@@ -1,7 +1,7 @@
 import config from "@/config/config";
 
-export async function getPostBySlug(slug) {
-  const response = await fetch(`${config.apiUrl}/posts/${slug}`);
+export async function getCategoryBySlug(slug) {
+  const response = await fetch(`${config.apiUrl}/categories/${slug}`);
   const jsonData = await response.json();
   return jsonData;
 }

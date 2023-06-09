@@ -1,44 +1,34 @@
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
 import Topic from "@/components/Topic";
-import config from "@/config/config";
+import { getCategoryBySlug } from "../api/category";
 
-export const getServerSideProps = async (context) => {
-  const { slug } = context.query;
+export const getStaticPaths = async () => {
+  return {
+    paths: [],
+    fallback: 'blocking'
+  }
+}
+
+export const getStaticProps = async (context) => {
+  const data = await getCategoryBySlug(context.params.slug)
+  if(!data) return { redirect: '/categories', permanent: false }
 
   return {
-    props: {
-      slug,
-    },
-  };
-};
+    props: { data }
+  }
+}
 
-const CategoryDetail = () => {
-  const router = useRouter();
-  const { slug } = router.query;
-  const [category, setCategory] = useState([]);
-  const [blogPosts, setBlogPosts] = useState([]);
+const CategoryDetail = ({ data }) => {
 
-  useEffect(() => {
-    const fetchCategoryDetails = async () => {
-      const apiUrl = config.apiUrl;
-      const response = await fetch(`${apiUrl}/categories/${slug}`);
-      const data = await response.json();
+  const { category, blogPosts } = data;
 
-      setCategory(data.category);
-
-      // Filter only published posts
-      const published_blogPost = data.blogPosts.filter(
-        (blogPost) => blogPost.published === true
-      );
-      setBlogPosts(published_blogPost);
-    };
-    fetchCategoryDetails();
-  }, [slug]);
+  // Filter only published posts
+  const published_blogPost = blogPosts.filter(
+    (blogPost) => blogPost.published === true
+  );
 
   return (
     <div className="categoryDetail">
-      <Topic topic={category} blogPosts={blogPosts} topicName={"category"} />
+      <Topic topic={category} blogPosts={published_blogPost} topicName={"category"} />
     </div>
   );
 };

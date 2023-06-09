@@ -1,9 +1,7 @@
 import CategoryButton from "./CategoryButton";
 import { useRouter } from "next/router";
-import config from "../config/config";
 import MarkdownPreview from "./MdPreview";
 import styled from "styled-components";
-import useSWR from "swr";
 import Image from "next/image";
 
 const { DateTime } = require("luxon");
@@ -89,10 +87,7 @@ const BlogPost = ({ data }) => {
 
   // Handle tag click
   const handleClick = (tag) => {
-    const urlRegex = /\s/g;
-    const url_title = tag.name.toLowerCase().replace(urlRegex, "-");
-
-    router.push(`/tags/${tag._id}/${url_title}`);
+    router.push(`/tags/${tag.slug}`);
   };
 
   return (

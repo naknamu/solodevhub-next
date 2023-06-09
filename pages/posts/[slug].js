@@ -1,20 +1,22 @@
-import { useRouter } from "next/router";
 import BlogPost from "@/components/BlogPost";
 import Comment from "@/components/Comment";
-import config from "@/config/config";
+import { getPostBySlug } from "../api/post";
 
-export const getServerSideProps = async (context) => {
-  const { slug } = context.query;
+export const getStaticPaths = async () => {
+  return {
+    paths: [],
+    fallback: 'blocking'
+  }
+}
 
-  const response = await fetch(`${config.apiUrl}/posts/${slug}`);
-  const data = await response.json();
+export const getStaticProps = async (context) => {
+  const post = await getPostBySlug(context.params.slug)
+  if(!post) return { redirect: '/', permanent: false } // redirect to main blog posts page if post doesn't exist, or any other page you want
 
   return {
-    props: {
-      post: data,
-    },
-  };
-};
+    props: { post }
+  }
+}
 
 const BlogPostDetail = ({ post }) => {
   return (

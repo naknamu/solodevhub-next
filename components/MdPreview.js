@@ -3,17 +3,14 @@ import "@uiw/react-markdown-preview/markdown.css";
 import dynamic from "next/dynamic";
 
 const MarkdownPreview = ({ markdown }) => {
-  const EditerMarkdown = dynamic(
-    () =>
-      import("@uiw/react-md-editor").then((mod) => {
-        return mod.default.Markdown;
-      }),
+  const Preview = dynamic(
+    () => import("@uiw/react-markdown-preview").then((mod) => mod.default),
     { ssr: false }
   );
 
   return (
     <div data-color-mode="light">
-      <EditerMarkdown source={markdown} />
+      <Preview source={markdown} />
     </div>
   );
 };
