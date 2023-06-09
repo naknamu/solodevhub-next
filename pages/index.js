@@ -2,7 +2,7 @@ import Head from "next/head";
 import Hero from "@/components/Hero";
 import { useRef } from "react";
 import Main from "@/components/Main";
-import config from "../config/config";
+import config from "@/config/config";
 import { SWRConfig } from "swr";
 
 export async function getStaticProps() {
@@ -43,7 +43,7 @@ export default function Home({ fallback }) {
       <div className="home">
         <Hero ref={parentRef} scrollToChild={scrollToChild} />
         <SWRConfig value={{ fallback }}>
-          <Main ref={childRef} />
+          <Main typeOfPost={'Latest'} ref={childRef} />
         </SWRConfig>
       </div>
     </>
