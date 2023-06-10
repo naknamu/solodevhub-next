@@ -29,11 +29,13 @@ export default function Home({ fallback }) {
 
   return (
     <>
-      <Metatag title={"Insights, tutorials, and career advice for solo developers"} />
+      <Metatag
+        title={"Insights, tutorials, and career advice for solo developers"}
+      />
       <div className="home">
         <Hero ref={parentRef} scrollToChild={scrollToChild} />
         <SWRConfig value={{ fallback }}>
-          <Main typeOfPost={'Latest'} ref={childRef} />
+          <Main typeOfPost={"Latest"} ref={childRef} />
         </SWRConfig>
       </div>
     </>

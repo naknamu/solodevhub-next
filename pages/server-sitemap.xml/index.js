@@ -1,5 +1,5 @@
 // pages/server-sitemap.xml/index.tsx
-import { getServerSideSitemapLegacy } from 'next-sitemap'
+import { getServerSideSitemapLegacy } from "next-sitemap";
 import config from "@/config/config";
 
 export const getServerSideProps = async (ctx) => {
@@ -8,14 +8,16 @@ export const getServerSideProps = async (ctx) => {
 
   const data = await response.json();
   const fields = data.map((item) => ({
-    loc: `${process.env.SITE_URL || 'https://solodevhub.com'}/posts/${item.slug}`,
+    loc: `${process.env.SITE_URL || "https://solodevhub.com"}/posts/${
+      item.slug
+    }`,
     lastmod: item.updatedAt,
     priority: 0.8,
     changefreq: "monthly",
   }));
 
-  return getServerSideSitemapLegacy(ctx, fields)
-}
+  return getServerSideSitemapLegacy(ctx, fields);
+};
 
 // Default export to prevent next.js errors
 export default function SitemapIndex() {}

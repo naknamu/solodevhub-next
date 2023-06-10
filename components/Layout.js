@@ -14,8 +14,8 @@ const Layout = ({ children }) => {
           content="Discover the world of solo software development with insights, tutorials, and career advice exclusively for aspiring solo developers."
         />
         <meta
-        name="keywords"
-        content="software development, coding tutorials, career tips, programming advice, solo developer"
+          name="keywords"
+          content="software development, coding tutorials, career tips, programming advice, solo developer"
         />
         <meta name="author" content="Jodel Del Valle" />
         <meta name="robots" content="index, follow" />

@@ -1,7 +1,6 @@
 import BlogPost from "@/components/BlogPost";
 import Comment from "@/components/Comment";
 import Metatag from "@/components/Metatag";
-import Head from "next/head";
 import { getPostBySlug } from "../api/post";
 
 export const getStaticPaths = async () => {
@@ -23,19 +22,12 @@ export const getStaticProps = async (context) => {
 const BlogPostDetail = ({ post }) => {
   return (
     <>
-      <Head>
-        <meta
-          property="og:image"
-          content={post.image_url}
-        />
-      </Head>
       <Metatag title={post.title} />
       <div className="blogPostDetail">
-      <BlogPost data={post} />
-      <Comment postid={post._id} />
-    </div>
+        <BlogPost data={post} />
+        <Comment postid={post._id} />
+      </div>
     </>
-
   );
 };
 
