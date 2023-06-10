@@ -1,6 +1,6 @@
 import config from "@/config/config";
 
-export const runtime = 'edge';
+export const runtime = 'experimental-edge';
 
 export async function getPostBySlug(slug) {
   const response = await fetch(`${config.apiUrl}/posts/${slug}`);

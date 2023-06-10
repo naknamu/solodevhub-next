@@ -4,7 +4,7 @@ import Metatag from "@/components/Metatag";
 import Head from "next/head";
 import { getPostBySlug } from "../api/post";
 
-export const runtime = 'edge';
+export const runtime = 'experimental-edge';
 
 export const getStaticPaths = async () => {
   return {

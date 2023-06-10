@@ -10,5 +10,5 @@ module.exports = removeImports({
   compiler: {
     // Enables the styled-components SWC transform
     styledComponents: true,
-  },
+  }
 });

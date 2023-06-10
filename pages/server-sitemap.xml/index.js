@@ -2,7 +2,7 @@
 import { getServerSideSitemapLegacy } from 'next-sitemap'
 import config from "@/config/config";
 
-export const runtime = 'edge';
+export const runtime = 'experimental-edge';
 
 export const getServerSideProps = async (ctx) => {
   // Method to source urls from cms
