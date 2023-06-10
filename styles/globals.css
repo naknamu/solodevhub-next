@@ -491,7 +491,7 @@ header .flex-wrapper {
 
   .wmde-markdown pre {
     overflow-x: scroll;
-    max-width: 25rem;
+    max-width: 85vw;
   }
 }
 
