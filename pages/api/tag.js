@@ -1,5 +1,7 @@
 import config from "@/config/config";
 
+export const runtime = 'edge';
+
 export async function getTagBySlug(slug) {
   const response = await fetch(`${config.apiUrl}/tags/${slug}`);
   const jsonData = await response.json();

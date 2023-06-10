@@ -1,6 +1,8 @@
 import Topic from "@/components/Topic";
 import { getTagBySlug } from "../api/tag";
 
+export const runtime = 'edge';
+
 export const getStaticPaths = async () => {
   return {
     paths: [],
