@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import "@/styles/globals.css";
 import { useRouter } from "next/router";
 import { Montserrat, Inter } from "next/font/google";
+import Head from "next/head";
 
 const mont = Montserrat({ subsets: ["latin"] });
 

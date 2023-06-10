@@ -4,6 +4,7 @@ import { useRef } from "react";
 import Main from "@/components/Main";
 import config from "@/config/config";
 import { SWRConfig } from "swr";
+import Metatag from "@/components/Metatag";
 
 export async function getStaticProps() {
   // `getStaticProps` is executed on the server side.
@@ -28,18 +29,7 @@ export default function Home({ fallback }) {
 
   return (
     <>
-      <Head>
-        <title>
-          Solo Dev Hub | Insights, tutorials, and career advice for solo
-          developers
-        </title>
-        <meta
-          name="description"
-          content="Discover the world of solo software development with insights, tutorials, and career advice exclusively for aspiring solo developers."
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Metatag title={"Insights, tutorials, and career advice for solo developers"} />
       <div className="home">
         <Hero ref={parentRef} scrollToChild={scrollToChild} />
         <SWRConfig value={{ fallback }}>
