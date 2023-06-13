@@ -10,15 +10,15 @@ export default function App({ Component, pageProps }) {
   const router = useRouter();
 
   return (
-    <main className={mont.className}>
-      <Layout>
-        {/* <!-- Google tag (gtag.js) --> */}
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-YNVGXK4VGH"
-        ></Script>
-        <Script>
-          {`
+    <>
+      {/* <!-- Google tag (gtag.js) --> */}
+      <Script
+        async
+        strategy="afterInteractive"
+        src="https://www.googletagmanager.com/gtag/js?id=G-YNVGXK4VGH"
+      ></Script>
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
           window.dataLayer = window.dataLayer || [];
           function gtag() {
             dataLayer.push(arguments);
@@ -26,10 +26,13 @@ export default function App({ Component, pageProps }) {
           gtag("js", new Date());
 
           gtag("config", "G-YNVGXK4VGH");
-          `}
-        </Script>
-        <Component {...pageProps} key={router.asPath} />
-      </Layout>
-    </main>
+        `}
+      </Script>
+      <main className={mont.className}>
+        <Layout>
+          <Component {...pageProps} key={router.asPath} />
+        </Layout>
+      </main>
+    </>
   );
 }
