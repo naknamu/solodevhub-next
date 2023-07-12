@@ -8,7 +8,7 @@ export const getServerSideProps = async (ctx) => {
 
   const data = await response.json();
   const fields = data.map((item) => ({
-    loc: `${process.env.SITE_URL || "https://solodevhub.com"}/posts/${
+    loc: `${"https://solodevhub.com"}/posts/${
       item.slug
     }`,
     lastmod: item.updatedAt,

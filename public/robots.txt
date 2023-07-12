@@ -3,8 +3,8 @@ User-agent: *
 Allow: /
 
 # Host
-Host: http://localhost:8000/
+Host: https://solodevhub.com/
 
 # Sitemaps
-Sitemap: http://localhost:8000/sitemap.xml
-Sitemap: http://localhost:8000/server-sitemap.xml
+Sitemap: https://solodevhub.com/sitemap.xml
+Sitemap: https://solodevhub.com/server-sitemap.xml
