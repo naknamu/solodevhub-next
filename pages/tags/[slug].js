@@ -1,5 +1,6 @@
 import Topic from "@/components/Topic";
 import { getTagBySlug } from "../api/tag";
+import Metatag from "@/components/Metatag";
 
 export const getStaticPaths = async () => {
   return {
@@ -26,9 +27,13 @@ const TagDetail = ({ data }) => {
   );
 
   return (
-    <div className="tagDetail">
-      <Topic topic={tag} blogPosts={published_blogPost} topicName={"tag"} />
-    </div>
+    <>
+      <Metatag title={tag.name} />
+      <div className="tagDetail">
+        <Topic topic={tag} blogPosts={published_blogPost} topicName={"tag"} />
+      </div>
+    </>
+
   );
 };
 

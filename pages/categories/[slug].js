@@ -1,5 +1,6 @@
 import Topic from "@/components/Topic";
 import { getCategoryBySlug } from "../api/category";
+import Metatag from "@/components/Metatag";
 
 export const getStaticPaths = async () => {
   return {
@@ -26,13 +27,16 @@ const CategoryDetail = ({ data }) => {
   );
 
   return (
-    <div className="categoryDetail">
-      <Topic
-        topic={category}
-        blogPosts={published_blogPost}
-        topicName={"category"}
-      />
-    </div>
+    <>
+      <Metatag title={category.name} />
+      <div className="categoryDetail">
+        <Topic
+          topic={category}
+          blogPosts={published_blogPost}
+          topicName={"category"}
+        />
+      </div>
+    </>
   );
 };
 
