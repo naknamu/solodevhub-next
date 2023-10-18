@@ -66,6 +66,9 @@ const Navbar = () => {
                 <Link href="/" onClick={() => handleCloseClick()}>
                   Home
                 </Link>
+                <Link href="/posts" onClick={() => handleCloseClick()}>
+                  Posts
+                </Link>
                 <Link href="/categories" onClick={() => handleCloseClick()}>
                   Categories
                 </Link>
