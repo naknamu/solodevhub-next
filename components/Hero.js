@@ -30,7 +30,7 @@ const Hero = forwardRef(({ scrollToChild }, ref) => {
             Explore blog
           </button>
           <button className="btn btn-secondary">
-            <Link href={"https://www.naknamu.com/"} target="_blank">
+            <Link href={"https://naknamu.github.io/"} target="_blank">
               About me
             </Link>
           </button>
