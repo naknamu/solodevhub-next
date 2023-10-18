@@ -2,6 +2,7 @@ import CategoryButton from "./CategoryButton";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import Link from "next/link";
 
 const BlogPostCard = ({ blogPost }) => {
   const MAX_PREVIEW_LENGTH = 200; // maximum length of the preview content
@@ -33,8 +34,10 @@ const BlogPostCard = ({ blogPost }) => {
       <div className="blog-content-wrapper">
         <CategoryButton category={blogPost.category} />
 
-        <h3 className="h3" onClick={() => handleClick()}>
-          {blogPost.title}
+        <h3 className="h3">
+          <Link href={`/posts/${blogPost.slug}`}>
+            {blogPost.title}
+          </Link>
         </h3>
 
         <p className="blog-text">{previewContent}....</p>
