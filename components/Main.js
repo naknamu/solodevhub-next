@@ -32,7 +32,7 @@ const Main = forwardRef((props, ref) => {
     <div className="main" ref={ref}>
       <div className="container">
         <div className="blog">
-          <h2 className="h2">{props.typeOfPost} Blog Posts</h2>
+          <h2 className="h2">{props.typeOfPost} Blog</h2>
           <div className="blogPosts-card">
             {data &&
               data.map((blogPost) => (

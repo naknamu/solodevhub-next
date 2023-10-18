@@ -19,7 +19,7 @@ const Posts = ({ fallback }) => {
   return (
     <>
       <SWRConfig value={{ fallback }}>
-        <Main typeOfPost={null} ref={null} />
+        <Main typeOfPost={`All`} ref={null} />
       </SWRConfig>
     </>
   );
