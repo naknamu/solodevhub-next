@@ -1,8 +1,8 @@
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 import Link from "next/link";
 
 const CategoryButton = ({ category }) => {
-  const router = useRouter();
+  // const router = useRouter();
 
   // const handleClick = () => {
   //   router.push(`/categories/${category.slug}/`);
