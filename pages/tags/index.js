@@ -6,6 +6,7 @@ import {
   TopicWrapper,
   TopicListWrapper,
 } from "@/components/StyledComponents";
+import Metatag from "@/components/Metatag";
 
 const Tags = () => {
   const [tags, setTags] = useState([]);
@@ -23,20 +24,25 @@ const Tags = () => {
   }, []);
 
   return (
-    <AllTopic>
-      <div className="container">
-        <TopicWrapper>
-          <h1 className="h1">Tags</h1>
-          <p>Click tag to view details:</p>
-          <TopicListWrapper>
-            {tags &&
-              tags.map((tag) => (
-                <TopicList key={tag._id} topic={tag} topicLists={"tags"} />
-              ))}
-          </TopicListWrapper>
-        </TopicWrapper>
-      </div>
-    </AllTopic>
+    <>
+      <Metatag
+        title={"Tags"}
+      />
+      <AllTopic>
+        <div className="container">
+          <TopicWrapper>
+            <h1 className="h1">Tags</h1>
+            <p>Click tag to view details:</p>
+            <TopicListWrapper>
+              {tags &&
+                tags.map((tag) => (
+                  <TopicList key={tag._id} topic={tag} topicLists={"tags"} />
+                ))}
+            </TopicListWrapper>
+          </TopicWrapper>
+        </div>
+      </AllTopic>
+    </>
   );
 };
 

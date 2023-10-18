@@ -6,6 +6,7 @@ import {
   TopicWrapper,
   TopicListWrapper,
 } from "@/components/StyledComponents";
+import Metatag from "@/components/Metatag";
 
 const Categories = () => {
   const [categories, setCategories] = useState([]);
@@ -23,24 +24,29 @@ const Categories = () => {
   }, []);
 
   return (
-    <AllTopic>
-      <div className="container">
-        <TopicWrapper>
-          <h1 className="h1">Categories</h1>
-          <p>Click category to view details:</p>
-          <TopicListWrapper>
-            {categories &&
-              categories.map((category) => (
-                <TopicList
-                  key={category._id}
-                  topic={category}
-                  topicLists={"categories"}
-                />
-              ))}
-          </TopicListWrapper>
-        </TopicWrapper>
-      </div>
-    </AllTopic>
+    <>
+      <Metatag
+        title={"Categories"}
+      />
+      <AllTopic>
+        <div className="container">
+          <TopicWrapper>
+            <h1 className="h1">Categories</h1>
+            <p>Click category to view details:</p>
+            <TopicListWrapper>
+              {categories &&
+                categories.map((category) => (
+                  <TopicList
+                    key={category._id}
+                    topic={category}
+                    topicLists={"categories"}
+                  />
+                ))}
+            </TopicListWrapper>
+          </TopicWrapper>
+        </div>
+      </AllTopic>
+    </>
   );
 };
 

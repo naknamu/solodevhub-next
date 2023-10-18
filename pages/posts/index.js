@@ -1,6 +1,7 @@
 import Main from "@/components/Main";
 import config from "@/config/config";
 import { SWRConfig } from "swr";
+import Metatag from "@/components/Metatag";
 
 export async function getStaticProps() {
   // `getStaticProps` is executed on the server side.
@@ -18,6 +19,9 @@ export async function getStaticProps() {
 const Posts = ({ fallback }) => {
   return (
     <>
+      <Metatag
+        title={"Posts"}
+      />
       <SWRConfig value={{ fallback }}>
         <Main typeOfPost={`All`} ref={null} />
       </SWRConfig>
