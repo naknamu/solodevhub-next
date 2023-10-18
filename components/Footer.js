@@ -9,7 +9,7 @@ const Footer = () => {
           <Logo />
 
           <p className="footer-text">
-            Let's level up your skills and achieve your goals hrefgether.
+            Let's level up your skills and achieve your goals together.
           </p>
         </div>
 

@@ -34,7 +34,7 @@ const Topic = ({ topic, topicName, blogPosts }) => {
         <MarkdownPreview markdown={topic.detail} />
 
         <h2 className="h2">Blog Posts</h2>
-        <h3 className="h3">These are the blog posts under this {topicName}:</h3>
+        {/* <h3 className="h3">These are the blog posts under this {topicName}:</h3> */}
         <BloglistWrapper>
           {blogPosts &&
             blogPosts.map((blogPost) => (
