@@ -324,17 +324,18 @@ header .flex-wrapper {
 .social-media .text {
   color: var(--foreground-secondary);
   margin-bottom: 10px;
+  font-size: var(--fs-base);
 }
 
 .social-media .icon-wrapper {
   display: flex;
-  gap: 15px;
+  gap: 20px;
   justify-content: center;
 }
 
 .social-media .icon {
   color: var(--foreground-secondary);
-  font-size: var(--fs-2);
+  font-size: var(--fs-4);
 }
 
 .social-media .icon:hover {
@@ -349,10 +350,25 @@ header .flex-wrapper {
   padding-block: var(--pad-2);
 }
 
-.blog .h2 {
+.blog .label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: var(--pad-2);
+  justify-content: center;
+}
+
+.blog .arrow {
+  font-size: var(--fs-3);
+  color: var(--accent);
+  align-items: center;
+  display: flex;
+}
+
+/* .blog .h2 {
   margin-bottom: var(--pad-2);
   text-align: center;
-}
+} */
 
 .blogPosts-card {
   margin-bottom: 3rem;

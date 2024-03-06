@@ -6,6 +6,7 @@ module.exports = removeImports({
   reactStrictMode: true,
   images: {
     domains: ["pub-9c57eec207bf46e8acf2f916d8ea29e7.r2.dev"],
+    unoptimized: true,
   },
   compiler: {
     // Enables the styled-components SWC transform

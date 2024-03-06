@@ -1,7 +1,7 @@
 import CategoryButton from "./CategoryButton";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import { useRouter } from "next/router";
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 
 const BlogPostCard = ({ blogPost }) => {
@@ -19,7 +19,7 @@ const BlogPostCard = ({ blogPost }) => {
   return (
     <div className="blogPost-card">
       <div className="blog-card-banner">
-        <Image
+        <img
           src={blogPost.image_url === undefined ? "#" : blogPost.image_url}
           alt="Blog Post Banner"
           className="blog-banner-img"
@@ -27,7 +27,6 @@ const BlogPostCard = ({ blogPost }) => {
           width={400}
           height={400}
           responsive="true"
-          priority
         />
       </div>
 

@@ -2,7 +2,7 @@ import CategoryButton from "./CategoryButton";
 import { useRouter } from "next/router";
 import MarkdownPreview from "./MdPreview";
 import styled from "styled-components";
-import Image from "next/image";
+//import Image from "next/image";
 
 const { DateTime } = require("luxon");
 
@@ -95,12 +95,12 @@ const BlogPost = ({ data }) => {
       <div className="container">
         <BlogWrapper>
           <BannerWrapper>
-            <Image
+            <img
               src={data.image_url}
               alt={`${data.title} banner`}
               width={600}
               height={600}
-              priority
+              //priority
             />
           </BannerWrapper>
 

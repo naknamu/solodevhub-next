@@ -1,9 +1,9 @@
-import Image from "next/image";
+//import Image from "next/image";
 import { useRouter } from "next/router";
 
-const imageStyle = {
-  width: "auto",
-};
+// const imageStyle = {
+//   width: "auto",
+// };
 
 const Logo = () => {
   const router = useRouter();
@@ -14,13 +14,13 @@ const Logo = () => {
 
   return (
     <div onClick={handleClick} className="logo-wrapper">
-      <Image
+      <img
         width={150}
         height={40}
         src="/logo-no-background.png"
         alt="solodevhub logo"
-        style={imageStyle}
-        priority
+        //style={imageStyle}
+        //priority
       />
     </div>
   );

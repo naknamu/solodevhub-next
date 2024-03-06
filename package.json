@@ -7,7 +7,7 @@
     "npm": "8.3.1"
   },
   "scripts": {
-    "dev": "next dev -p 8000",
+    "dev": "sst bind next dev",
     "build": "next build",
     "postbuild": "next-sitemap",
     "start": "next start",
@@ -28,6 +28,9 @@
     "swr": "^2.1.5"
   },
   "devDependencies": {
-    "styled-components": "^5.3.10"
+    "styled-components": "^5.3.10",
+    "sst": "^2.40.3",
+    "aws-cdk-lib": "2.124.0",
+    "constructs": "10.3.0"
   }
 }

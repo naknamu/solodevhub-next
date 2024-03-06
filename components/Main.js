@@ -2,6 +2,7 @@ import BlogPostCard from "./BlogPostCard";
 import { forwardRef } from "react";
 import config from "../config/config";
 import useSWR from "swr";
+import { RiArrowDownCircleFill } from "react-icons/ri";
 
 const Main = forwardRef((props, ref) => {
   const fetchPosts = async () => {
@@ -32,7 +33,11 @@ const Main = forwardRef((props, ref) => {
     <div className="main" ref={ref}>
       <div className="container">
         <div className="blog">
-          <h2 className="h2">{props.typeOfPost} Blog</h2>
+          <div className="label">
+            <h2 className="h2">{props.typeOfPost} Blog</h2>
+            <div className="arrow"> <RiArrowDownCircleFill /> 
+            </div>
+          </div>
           <div className="blogPosts-card">
             {data &&
               data.map((blogPost) => (
