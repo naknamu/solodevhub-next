@@ -50,6 +50,11 @@ const Footer = () => {
                 Terms and Conditions
               </Link>
             </li>
+            <li>
+              <Link href="legal-stuff/disclaimer" className="footer-link">
+                Disclaimer
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
