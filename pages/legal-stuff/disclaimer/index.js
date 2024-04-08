@@ -1,6 +1,11 @@
+import Metatag from "@/components/Metatag";
+
 const Disclaimer = () => {
   return (
     <div className="container">
+      <Metatag
+        title={"Disclaimer"}
+      />
       <h1>Disclaimer</h1>
       <p>Last updated: April 08, 2024</p>
       <h2>Interpretation and Definitions</h2>

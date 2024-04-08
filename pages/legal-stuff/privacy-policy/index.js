@@ -1,6 +1,11 @@
+import Metatag from "@/components/Metatag";
+
 const PrivacyPolicy = () => {
   return (
     <div className="container">
+      <Metatag
+        title={"Privacy Policy"}
+      />
       <h1>Privacy Policy</h1>
       <p>Last updated: April 07, 2024</p>
       <p>

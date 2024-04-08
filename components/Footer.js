@@ -17,13 +17,7 @@ const Footer = () => {
           <p className="footer-title">Quick Links</p>
           <ul>
             <li>
-              <Link href="#" className="footer-link">
-                Advertise with us
-              </Link>
-            </li>
-
-            <li>
-              <Link href="#" className="footer-link">
+              <Link href="about-us" className="footer-link">
                 About Us
               </Link>
             </li>

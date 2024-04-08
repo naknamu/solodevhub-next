@@ -1,6 +1,11 @@
+import Metatag from "@/components/Metatag";
+
 const TermsAndConditions = () => {
   return (
     <div className="container">
+      <Metatag
+        title={"Terms and Conditions"}
+      />
       <h1>Terms and Conditions</h1>
       <p>Last updated: April 08, 2024</p>
       <p>
