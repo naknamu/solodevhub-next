@@ -17,13 +17,13 @@ const Footer = () => {
           <p className="footer-title">Quick Links</p>
           <ul>
             <li>
-              <Link href="about-us" className="footer-link">
+              <Link href="/about-us" className="footer-link">
                 About Us
               </Link>
             </li>
 
             <li>
-              <Link href="#" className="footer-link">
+              <Link href="/contact-us" className="footer-link">
                 Contact Us
               </Link>
             </li>
@@ -35,17 +35,17 @@ const Footer = () => {
 
           <ul>
             <li>
-              <Link href="legal-stuff/privacy-policy" className="footer-link">
+              <Link href="/legal-stuff/privacy-policy" className="footer-link">
                 Privacy Policy
               </Link>
             </li>
             <li>
-              <Link href="legal-stuff/terms-and-conditions" className="footer-link">
+              <Link href="/legal-stuff/terms-and-conditions" className="footer-link">
                 Terms and Conditions
               </Link>
             </li>
             <li>
-              <Link href="legal-stuff/disclaimer" className="footer-link">
+              <Link href="/legal-stuff/disclaimer" className="footer-link">
                 Disclaimer
               </Link>
             </li>
@@ -53,7 +53,7 @@ const Footer = () => {
         </div>
       </div>
       <p className="copyright">
-        © Copyright 2023 SoloDevHub. All rights reserved.
+        © Copyright 2024 SoloDevHub. All rights reserved.
       </p>
     </footer>
   );
