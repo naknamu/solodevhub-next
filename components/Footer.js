@@ -41,13 +41,13 @@ const Footer = () => {
 
           <ul>
             <li>
-              <Link href="#" className="footer-link">
+              <Link href="legal-stuff/privacy-policy" className="footer-link">
                 Privacy Policy
               </Link>
             </li>
             <li>
-              <Link href="#" className="footer-link">
-                Terms Of Use
+              <Link href="legal-stuff/terms-and-conditions" className="footer-link">
+                Terms and Conditions
               </Link>
             </li>
           </ul>
