@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Hero from "@/components/Hero";
 import { useRef } from "react";
 import Main from "@/components/Main";

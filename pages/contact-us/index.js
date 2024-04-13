@@ -21,11 +21,10 @@ const ContactUs = () => {
       <Metatag title={"Contact Us"} />
       <Wrapper>
         <h1>Contact Us</h1>
-        <p>Name: Jodel Del Valle</p>
-        <p>Email: jodeldelvalle@gmail.com</p>
-        <p>Phone Number: +63 9773748593</p>
+        <p><b>Name:</b> Jodel Del Valle</p>
+        <p><b>Email:</b> jodeldelvalle@gmail.com</p>
         <p>
-          Location: Block 14, Lot 36 Covenant Village, Bagong Silangan, Quezon
+          <b>Location:</b> Block 14, Lot 36 Covenant Village, Bagong Silangan, Quezon
           City, Philippines
         </p>
       </Wrapper>

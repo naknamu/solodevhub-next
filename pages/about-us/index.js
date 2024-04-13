@@ -27,9 +27,9 @@ const AboutUs = () => {
             <p>I am a software developer based from the Philippines.</p>
             <p>In 2019, I left the corporate world to pursue freelancing.</p>
             <p>This is one of my projects that I have developed to help other solo developers
-                learn how create amazing software applications, be it games or websites.
+                learn how to create amazing software applications, be it games or websites.
             </p>
-            <p>I hope you learned something by visiting Solo Dev Hub. Cheers!</p>
+            <p>I hope you learned something by visiting SoloDevHub. Cheers!</p>
 
             <p>P.S.</p>
             <p>If you want to know me more, you can visit my personal portfolio @

@@ -15,14 +15,10 @@ const Hero = forwardRef(({ scrollToChild }, ref) => {
     <div className="hero" ref={ref}>
       <div className="container">
         <h1 className="h1">
-          Welcome to <b>SoloDevHub</b>
+          Insights, tutorials, and career advice for <b>solo developers</b>.
         </h1>
         <div className="details">
-          <p className="h3">
-            Discover the world of solo software development with insights,
-            tutorials, and career advice exclusively for aspiring solo
-            developers.
-          </p>
+          <p className="h3">Created for solo developers by a solo developer.</p>
         </div>
 
         <div className="btn-group">
@@ -30,15 +26,15 @@ const Hero = forwardRef(({ scrollToChild }, ref) => {
             Explore blog
           </button>
           <button className="btn btn-secondary">
-            <Link href={"https://naknamu.github.io/"} target="_blank">
-              About me
+            <Link href="/about-us" target="_blank">
+              About us
             </Link>
           </button>
         </div>
 
         <div className="social-media">
           <p className="h4 text">
-            Help us by sharing this site to your friends:{" "}
+            Help us by sharing this site to those who are solo developers:{" "}
           </p>
           <div className="icon-wrapper">
             <FacebookShareButton url={shareUrl}>
