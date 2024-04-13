@@ -15,7 +15,7 @@ const Hero = forwardRef(({ scrollToChild }, ref) => {
     <div className="hero" ref={ref}>
       <div className="container">
         <h1 className="h1">
-          Insights, tutorials, and career advice for <b>solo developers</b>.
+          Insights, tutorials, and career advice for <b>solo developers</b>
         </h1>
         <div className="details">
           <p className="h3">Created for solo developers by a solo developer.</p>
