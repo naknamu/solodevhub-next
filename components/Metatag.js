@@ -8,7 +8,7 @@ const Metatag = ({ title }) => {
   return (
     <Head>
       <link rel="canonical" href={canonicalUrl} />
-      <title>{`${title} | Solo Dev Hub`}</title>
+      <title>{`${title} | SoloDevHub`}</title>
     </Head>
   );
 };
