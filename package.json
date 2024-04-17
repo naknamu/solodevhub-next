@@ -23,14 +23,15 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.9.0",
+    "react-loading-skeleton": "^3.4.0",
     "react-share": "^4.4.1",
     "sharp": "^0.32.1",
     "swr": "^2.1.5"
   },
   "devDependencies": {
-    "styled-components": "^5.3.10",
-    "sst": "^2.40.3",
     "aws-cdk-lib": "2.124.0",
-    "constructs": "10.3.0"
+    "constructs": "10.3.0",
+    "sst": "^2.40.3",
+    "styled-components": "^5.3.10"
   }
 }
