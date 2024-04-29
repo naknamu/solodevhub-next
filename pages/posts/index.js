@@ -10,7 +10,7 @@ export async function getStaticProps() {
   return {
     props: {
       fallback: {
-        blogPosts: data,
+        "blogPosts": data,
       },
     },
   };
